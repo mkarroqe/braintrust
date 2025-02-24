@@ -1,18 +1,20 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import { downloadExperimentsToCsv } from './download_experiments';
-import { downloadDatasetsToCsv } from './download_datasets';
+import { downloadExperimentsToCsv } from './src/download_experiments';
+import { downloadDatasetsToCsv } from './src/download_datasets';
 
 async function downloadProjectToCsv(projectName: string) {
-    // TODO: check for existing/create project folder
-    fs.mkdir(path.join(projectName),
-        (err: any) => {
-            if (err) {
-                return console.error(err);
-            }
-    }); 
-    downloadExperimentsToCsv(projectName);
-    downloadDatasetsToCsv(projectName);
+    const destDir = path.join('local_projects', projectName);
+    try {
+        if (!fs.existsSync(destDir)) {
+            fs.mkdirSync(destDir, {recursive: true});
+        }
+    } catch (err) {
+        console.error(err);
+    }
+    downloadExperimentsToCsv(projectName, destDir);
+    downloadDatasetsToCsv(projectName, destDir);
   }
-  
+
+// hard-coded test code
 downloadProjectToCsv("Explorations");
