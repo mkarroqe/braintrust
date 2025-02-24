@@ -21,9 +21,13 @@ async function fetchDataset(datasetId: string): Promise<FetchDatasetResponse> {
     }).then(res => res.json()).then(res => { return res as FetchDatasetResponse});
 }
 
-export async function downloadDatasetsToCsv(projectName: string, destDir: string) {
+export async function downloadDatasetsToCsv(projectName: string, destDir: string): Promise<Boolean> {
   const datasetList = await listDatasets(projectName);
-  
+  if (datasetList.objects.length == 0) { 
+    console.error("No datasets found for " + projectName + ". Exiting.");
+    return false;
+}
+
   datasetList.objects.forEach(async dataset => {
       const fetchedDataset = await fetchDataset(dataset.id);
       const filename = `${destDir}/dataset_${dataset.name}.csv`;
@@ -41,5 +45,8 @@ export async function downloadDatasetsToCsv(projectName: string, destDir: string
 
       const csvContent = `${csvHeaders}\n${csvRows}`;
       fs.writeFileSync(filename, csvContent);
+
+      console.log("Successfully downloaded datasets to " + filename + ".");
+      return true;
   });
 }

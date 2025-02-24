@@ -13,7 +13,7 @@ Eval(
       return [
         {
           input: "Foo",
-          expected: "Hi Foo",
+          expected: "Hey Foo",
         },
         {
           input: "Bar",

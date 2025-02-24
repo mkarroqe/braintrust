@@ -16,5 +16,9 @@ async function downloadProjectToCsv(projectName: string) {
     downloadDatasetsToCsv(projectName, destDir);
   }
 
-// hard-coded test code
-downloadProjectToCsv("Explorations");
+const projectNameArg = process.argv[2];
+if (!projectNameArg) {
+    console.error("Please enter your project name as an arg.");
+} else {
+    downloadProjectToCsv(projectNameArg);
+}

@@ -20,9 +20,12 @@ async function fetchExperiment(experimentId: string): Promise<FetchExperimentRes
       }).then(res => res.json()).then(res => { return res as FetchExperimentResponse});
 }
 
-export async function downloadExperimentsToCsv(projectName: string, destDir: string) {
+export async function downloadExperimentsToCsv(projectName: string, destDir: string): Promise<Boolean> {
     const experimentsList = await listExperiments(projectName);
-    
+    if (experimentsList.objects.length == 0) { 
+        console.error("No experiments found for " + projectName + ". Exiting.");
+        return false;
+    }
     experimentsList.objects.forEach(async experiment => {
         const fetchedExperiment = await fetchExperiment(experiment.id);
         const filename = `${destDir}/experiment_${experiment.name}.csv`;
@@ -40,5 +43,8 @@ export async function downloadExperimentsToCsv(projectName: string, destDir: str
 
         const csvContent = `${csvHeaders}\n${csvRows}`;
         fs.writeFileSync(filename, csvContent);
+        
+        console.log("Successfully downloaded experiments to" + filename + ".");
+        return true;
     });
 }
