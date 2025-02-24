@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "autoevals": "^0.0.119",
+    "braintrust": "^0.0.184",
+    "dotenv": "^16.4.7"
+  }
+}
