@@ -2,23 +2,27 @@
 This repo supports downloading a Braintrust project to a local directory.
 
 ## usage
-to run, add your `BRAINTRUST_API_KEY` to your `.env` file and run 
+To run, add your `BRAINTRUST_API_KEY` to your `.env` file and run: 
 
 ```
-npx ts-node download_project.ts <projectName>
+npx ts-node download_project.ts <PROJECT NAME>
 ```
+> If `<PROJECT NAME>` is not provided, you will be prompted to add one.
 
-If `projectName` is not provided, you will be prompted to add one.
+A new directory of `.csv` files will be generated with the following naming conventions:
+- `<PROJECT NAME>_YYYYMMDDHHMMSS`/
+  - `dataset_<DATASET NAME>.csv`
+  - `experiment_<EXPERIMENT NAME>.csv`
 
-## testing
-example csv files are in the `local_projects/Explorations` directory; `Explorations` was my mock project name.
+## testing/demo
+Example `csv` files are in the `local_projects/` directory.
 
-`mock-setup` was used to populate my braintrust account with mock data for testing, with the values for `PROJECT_NAME` and `DATASET_NAME` being set in the `.env` file.
+#### Example: `canned-spam`
+  - The `canned-spam` project was loosely inspired by the [Spam Classifier Cookbook](https://www.braintrust.dev/docs/cookbook/recipes/SpamClassifier#importing-a-dataset). 
 
-```
-ts-node mock-setup/init-dataset.ts
-npx braintrust eval mock-setup/mock.eval.ts
-```
+  - [Dataset]()
+  - [Experiment]()
 
-## notes
-- The CSVs currently include a few fields that aren't visible in the UI (id, _xact_id, created, project_id, experiment_id/dataset_id).
+#### Example: `Project-e34fd59c`
+  - The `Project-e34fd59c` project was initialized with mock data from the [Get Started Tutorial](https://www.braintrust.dev/docs/start/eval-sdk).
+  - [`experiment_main-1740545492.csv`](local_project/Project-e34fd59c-2-25-227075115/experiment_main-1740545492.csv) includes error messages

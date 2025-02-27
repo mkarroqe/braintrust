@@ -4,17 +4,16 @@ dotenv.config()
 import { initDataset, Eval } from "braintrust";
 import { Levenshtein, ExactMatch } from "autoevals";
  
-function output(name: string): string {
-    if (name == "Foo") return "Hi " + name;
-    return "Squawk " + name;
+function isSpam(message: string): boolean {
+    return !message.includes("not spam");
 }
 
 Eval(
-  process.env.PROJECT_NAME,
+  "canned-spam",
   {
-    data: initDataset(`${process.env.PROJECT_NAME}`, { dataset: `${process.env.DATASET_NAME}` }),
+    data: initDataset("canned-spam", { dataset: "ex(spam)ples" }),
     task: async (input) => {
-      return output(input); 
+      return isSpam(input).toString(); 
     },
     scores: [Levenshtein, ExactMatch],
   },
