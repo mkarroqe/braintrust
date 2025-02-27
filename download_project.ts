@@ -4,7 +4,8 @@ import { downloadExperimentsToCsv } from './src/download_experiments';
 import { downloadDatasetsToCsv } from './src/download_datasets';
 
 async function downloadProjectToCsv(projectName: string) {
-    const destDir = path.join('local_projects', projectName);
+    const timestamp = new Date().toISOString().replace(/[-:.TZ]/g, '').slice(0, 14);
+    const destDir = path.join('local_projects', `${projectName}-${timestamp}`);
     try {
         if (!fs.existsSync(destDir)) {
             fs.mkdirSync(destDir, {recursive: true});
@@ -12,8 +13,8 @@ async function downloadProjectToCsv(projectName: string) {
     } catch (err) {
         console.error(err);
     }
-    downloadExperimentsToCsv(projectName, destDir);
-    downloadDatasetsToCsv(projectName, destDir);
+    await downloadExperimentsToCsv(projectName, destDir);
+    await downloadDatasetsToCsv(projectName, destDir);
   }
 
 const projectNameArg = process.argv[2];

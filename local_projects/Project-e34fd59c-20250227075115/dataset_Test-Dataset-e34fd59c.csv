@@ -1,0 +1,6 @@
+id,input,expected,metadata,tags
+4c370176-6686-477e-b466-f02bbb01b5ed,0,"{""error"":null,""result"":1}","{""foo"":0}",
+6e634935-9e88-4a88-82c6-7285adbae80e,1,"{""error"":null,""result"":2}","{""foo"":1}",
+7e148977-4328-488d-88af-e0cdb83bdabf,3,"{""error"":null,""result"":4}","{""foo"":1}",
+89efa5fa-2306-4844-8a31-c7a9e8ebf0b5,2,"{""error"":null,""result"":3}","{""foo"":0}",
+d1b655c0-c9b1-468d-b91e-88852e5c74e5,4,"{""error"":null,""result"":5}","{""foo"":0}",

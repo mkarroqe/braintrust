@@ -3,6 +3,7 @@ dotenv.config()
 
 import * as fs from 'fs'
 import { ListDatasetsResponse, FetchDatasetResponse } from './datasets'
+import { escapeCsvValue } from './utils'
 
 // list all datasets of projectName
 async function listDatasets(projectName: string): Promise<ListDatasetsResponse> {
@@ -24,23 +25,26 @@ async function fetchDataset(datasetId: string): Promise<FetchDatasetResponse> {
 export async function downloadDatasetsToCsv(projectName: string, destDir: string): Promise<Boolean> {
   const datasetList = await listDatasets(projectName);
   if (datasetList.objects.length == 0) { 
-    console.error("No datasets found for " + projectName + ". Exiting.");
+    console.error("No datasets found for " + projectName + ".");
     return false;
-}
+  }
+
+  // NOTE: assumption
+  const excludedFields = ['_xact_id', 'created', 'project_id', 'dataset_id', 'span_id', 'metrics', 'context', 'span_parents', 'root_span_id', 'is_root', 'origin'];
 
   datasetList.objects.forEach(async dataset => {
       const fetchedDataset = await fetchDataset(dataset.id);
       const filename = `${destDir}/dataset_${dataset.name}.csv`;
 
-      const csvHeaders = Object.keys(fetchedDataset.events[0]).join(',');
+      const csvHeadersArray = Object.keys(fetchedDataset.events[0])
+        .filter(key => !excludedFields.includes(key));
+      const csvHeaders = csvHeadersArray.join(',');
+
       const csvRows = fetchedDataset.events.map(event => {
-          return Object.keys(event).map(key => {
-              const value = event[key as keyof FetchDatasetResponse['events'][0]];
-              if (typeof value === 'object' && value !== null) {
-                  return `"${JSON.stringify(value).replace(/"/g, '""')}"`;
-              }
-              return value;
-          }).join(',');
+        return csvHeadersArray.map(key => {
+            const value = event[key as keyof FetchDatasetResponse['events'][0]];
+            return escapeCsvValue(value);
+        }).join(',');
       }).join('\n');
 
       const csvContent = `${csvHeaders}\n${csvRows}`;

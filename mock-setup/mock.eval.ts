@@ -1,29 +1,21 @@
-import { Eval } from "braintrust";
-import { Levenshtein } from "autoevals";
+import * as dotenv from 'dotenv'
+dotenv.config()
+
+import { initDataset, Eval } from "braintrust";
+import { Levenshtein, ExactMatch } from "autoevals";
  
 function output(name: string): string {
     if (name == "Foo") return "Hi " + name;
-    return "Hello " + name;
+    return "Squawk " + name;
 }
 
 Eval(
-  "Explorations", // Replace with your project name
+  process.env.PROJECT_NAME,
   {
-    data: () => {
-      return [
-        {
-          input: "Foo",
-          expected: "Hey Foo",
-        },
-        {
-          input: "Bar",
-          expected: "Hello Bar",
-        },
-      ]; // Replace with your eval dataset
-    },
+    data: initDataset(`${process.env.PROJECT_NAME}`, { dataset: `${process.env.DATASET_NAME}` }),
     task: async (input) => {
       return output(input); 
     },
-    scores: [Levenshtein],
+    scores: [Levenshtein, ExactMatch],
   },
 );

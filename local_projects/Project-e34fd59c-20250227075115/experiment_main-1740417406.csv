@@ -1,0 +1,6 @@
+id,input,output,expected,error,metadata,tags,duration,prompt tokens,completion tokens,total tokens,Levenshtein
+328d5d7d-1536-45e9-acab-05cb23a2e8e0,2,Hello 2,"{""error"":null,""result"":3}",,"{""foo"":0}",,0.00,,,,0.06666666666666665
+a3241084-b29b-4a73-8b39-2c384721ff01,4,Hello 4,"{""error"":null,""result"":5}",,"{""foo"":0}",,0.00,,,,0.06666666666666665
+a866d9c4-58a9-4f00-bedd-5261cf2a3736,0,Hello 0,"{""error"":null,""result"":1}",,"{""foo"":0}",,0.00,,,,0.06666666666666665
+a9378d65-ed1e-4cf7-862a-7d131d857461,1,Hello 1,"{""error"":null,""result"":2}",,"{""foo"":1}",,0.00,,,,0.06666666666666665
+b0d7ec72-b031-4b5d-aa8d-d1cb816f34b9,3,Hello 3,"{""error"":null,""result"":4}",,"{""foo"":1}",,0.00,,,,0.06666666666666665

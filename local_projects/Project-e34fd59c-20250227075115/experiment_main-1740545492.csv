@@ -1,0 +1,31 @@
+id,input,output,expected,error,metadata,tags,Levenshtein,duration,prompt tokens,completion tokens,total tokens
+186463d7-8492-4578-a500-483282e47266,3,Squawk 3,"{""error"":null,""result"":4}","Found exceptions for the following scorers: Humor
+
+AggregateError: Found exceptions for the following scorers: Humor
+    at callback (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6274:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6301:16","{""foo"":1,""scorer_errors"":{""Humor"":""Error: 400 Error: No API keys found (for gpt-4o). You can configure API secrets at https://www.braintrust.dev/app/settings?subroute=secrets\n    at APIError.generate (/Users/marykarroqe/Documents/Github/braintrust/node_modules/openai/error.js:45:20)\n    at OpenAI.makeStatusError (/Users/marykarroqe/Documents/Github/braintrust/node_modules/openai/core.js:263:33)\n    at OpenAI.makeRequest (/Users/marykarroqe/Documents/Github/braintrust/node_modules/openai/core.js:306:30)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)""}}",,0.06666666666666665,0.00,,,
+21e9cc0e-7882-408d-a1db-16b1dc5cd656,4,Squawk 4,"{""error"":null,""result"":5}","Found exceptions for the following scorers: Humor
+
+AggregateError: Found exceptions for the following scorers: Humor
+    at callback (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6274:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6301:16","{""foo"":0,""scorer_errors"":{""Humor"":""Error: 400 Error: No API keys found (for gpt-4o). You can configure API secrets at https://www.braintrust.dev/app/settings?subroute=secrets\n    at APIError.generate (/Users/marykarroqe/Documents/Github/braintrust/node_modules/openai/error.js:45:20)\n    at OpenAI.makeStatusError (/Users/marykarroqe/Documents/Github/braintrust/node_modules/openai/core.js:263:33)\n    at OpenAI.makeRequest (/Users/marykarroqe/Documents/Github/braintrust/node_modules/openai/core.js:306:30)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)""}}",,0.06666666666666665,0.00,,,
+aaa4091a-e66f-41b4-b8f4-c2c30d427284,0,Squawk 0,"{""error"":null,""result"":1}","Found exceptions for the following scorers: Humor
+
+AggregateError: Found exceptions for the following scorers: Humor
+    at callback (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6274:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6301:16","{""foo"":0,""scorer_errors"":{""Humor"":""Error: 400 Error: No API keys found (for gpt-4o). You can configure API secrets at https://www.braintrust.dev/app/settings?subroute=secrets\n    at APIError.generate (/Users/marykarroqe/Documents/Github/braintrust/node_modules/openai/error.js:45:20)\n    at OpenAI.makeStatusError (/Users/marykarroqe/Documents/Github/braintrust/node_modules/openai/core.js:263:33)\n    at OpenAI.makeRequest (/Users/marykarroqe/Documents/Github/braintrust/node_modules/openai/core.js:306:30)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)""}}",,0.06666666666666665,0.00,,,
+d02fa4ec-b4cb-4b38-9685-5a94b6ffadc3,1,Squawk 1,"{""error"":null,""result"":2}","Found exceptions for the following scorers: Humor
+
+AggregateError: Found exceptions for the following scorers: Humor
+    at callback (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6274:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6301:16","{""foo"":1,""scorer_errors"":{""Humor"":""Error: 400 Error: No API keys found (for gpt-4o). You can configure API secrets at https://www.braintrust.dev/app/settings?subroute=secrets\n    at APIError.generate (/Users/marykarroqe/Documents/Github/braintrust/node_modules/openai/error.js:45:20)\n    at OpenAI.makeStatusError (/Users/marykarroqe/Documents/Github/braintrust/node_modules/openai/core.js:263:33)\n    at OpenAI.makeRequest (/Users/marykarroqe/Documents/Github/braintrust/node_modules/openai/core.js:306:30)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)""}}",,0.06666666666666665,0.00,,,
+d9a8ade4-55fe-424a-8210-bd8480bf9992,2,Squawk 2,"{""error"":null,""result"":3}","Found exceptions for the following scorers: Humor
+
+AggregateError: Found exceptions for the following scorers: Humor
+    at callback (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6274:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6301:16","{""foo"":0,""scorer_errors"":{""Humor"":""Error: 400 Error: No API keys found (for gpt-4o). You can configure API secrets at https://www.braintrust.dev/app/settings?subroute=secrets\n    at APIError.generate (/Users/marykarroqe/Documents/Github/braintrust/node_modules/openai/error.js:45:20)\n    at OpenAI.makeStatusError (/Users/marykarroqe/Documents/Github/braintrust/node_modules/openai/core.js:263:33)\n    at OpenAI.makeRequest (/Users/marykarroqe/Documents/Github/braintrust/node_modules/openai/core.js:306:30)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)""}}",,0.06666666666666665,0.00,,,

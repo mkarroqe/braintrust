@@ -1,0 +1,6 @@
+id,input,output,expected,error,metadata,tags,Levenshtein,duration,prompt tokens,completion tokens,total tokens,ExactMatch
+0b5a4151-0eb6-4eb1-b762-5d1e7cd41201,2,Squawk 2,"{""error"":null,""result"":3}",,"{""foo"":0}",,0.06666666666666665,0.00,,,,0
+30d4056c-b8d0-401e-9524-3aad009b1cb7,3,Squawk 3,"{""error"":null,""result"":4}",,"{""foo"":1}",,0.06666666666666665,0.00,,,,0
+3d69929b-af84-4ee0-9c4d-f40170c454a6,1,Squawk 1,"{""error"":null,""result"":2}",,"{""foo"":1}",,0.06666666666666665,0.00,,,,0
+68724394-3b1b-4ff8-8975-d1c3b301ac25,4,Squawk 4,"{""error"":null,""result"":5}",,"{""foo"":0}",,0.06666666666666665,0.00,,,,0
+abc10c01-1966-4d33-865c-024fe78ef566,0,Squawk 0,"{""error"":null,""result"":1}",,"{""foo"":0}",,0.06666666666666665,0.00,,,,0
