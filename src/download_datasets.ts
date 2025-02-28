@@ -32,8 +32,15 @@ export async function downloadDatasetsToCsv(projectName: string, destDir: string
   // NOTE: assumption
   const excludedFields = ['_xact_id', 'created', 'project_id', 'dataset_id', 'span_id', 'metrics', 'context', 'span_parents', 'root_span_id', 'is_root', 'origin'];
 
-  datasetList.objects.forEach(async dataset => {
-      const fetchedDataset = await fetchDataset(dataset.id);
+  for (const dataset of datasetList.objects) {
+    const fetchedDataset = await fetchDataset(dataset.id);
+
+      // Check if dataset is empty
+      if (!fetchedDataset.events || fetchedDataset.events.length === 0) {
+        console.warn("Dataset", dataset.name, " is empty: Skipping.");
+        continue;
+      }
+
       const filename = `${destDir}/dataset_${dataset.name}.csv`;
 
       const csvHeadersArray = Object.keys(fetchedDataset.events[0])
@@ -50,7 +57,8 @@ export async function downloadDatasetsToCsv(projectName: string, destDir: string
       const csvContent = `${csvHeaders}\n${csvRows}`;
       fs.writeFileSync(filename, csvContent);
 
-      console.log("Successfully downloaded datasets to " + filename + ".");
-      return true;
-  });
+      console.log("Successfully downloaded", dataset.name, "to", filename + ".");
+  };
+  
+  return true;
 }

@@ -1,0 +1,66 @@
+id,input,output,expected,error,metadata,tags,duration,prompt tokens,completion tokens,total tokens
+8623fba5-c26c-4fdb-95ba-2ae8362a8b6b,0,,"{""error"":null,""result"":1}","message.includes is not a function
+
+TypeError: message.includes is not a function
+    at isSpam (eval at <anonymous> (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6781:5), <anonymous>:369:19)
+    at Object.task (eval at <anonymous> (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6781:5), <anonymous>:376:14)
+    at rootSpan.traced.name (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6145:46)
+    at /Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:3656:62
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)
+    at withCurrent (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:3656:46)
+    at /Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:4306:18
+    at runCatchFinally (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:1395:17)
+    at _SpanImpl.traced (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:4303:12)
+    at callback (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6143:26)",,,0.00,,,
+b20cb836-3248-4433-8ef8-d70b428f8091,2,,"{""error"":null,""result"":3}","message.includes is not a function
+
+TypeError: message.includes is not a function
+    at isSpam (eval at <anonymous> (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6781:5), <anonymous>:369:19)
+    at Object.task (eval at <anonymous> (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6781:5), <anonymous>:376:14)
+    at rootSpan.traced.name (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6145:46)
+    at /Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:3656:62
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)
+    at withCurrent (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:3656:46)
+    at /Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:4306:18
+    at runCatchFinally (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:1395:17)
+    at _SpanImpl.traced (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:4303:12)
+    at callback (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6143:26)",,,0.00,,,
+c23c2f64-b8cb-446d-bc24-49c01dfdaebf,3,,"{""error"":null,""result"":4}","message.includes is not a function
+
+TypeError: message.includes is not a function
+    at isSpam (eval at <anonymous> (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6781:5), <anonymous>:369:19)
+    at Object.task (eval at <anonymous> (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6781:5), <anonymous>:376:14)
+    at rootSpan.traced.name (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6145:46)
+    at /Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:3656:62
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)
+    at withCurrent (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:3656:46)
+    at /Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:4306:18
+    at runCatchFinally (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:1395:17)
+    at _SpanImpl.traced (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:4303:12)
+    at callback (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6143:26)",,,0.00,,,
+e590f970-309a-4179-8f3d-82faaf9a7a12,4,,"{""error"":null,""result"":5}","message.includes is not a function
+
+TypeError: message.includes is not a function
+    at isSpam (eval at <anonymous> (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6781:5), <anonymous>:369:19)
+    at Object.task (eval at <anonymous> (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6781:5), <anonymous>:376:14)
+    at rootSpan.traced.name (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6145:46)
+    at /Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:3656:62
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)
+    at withCurrent (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:3656:46)
+    at /Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:4306:18
+    at runCatchFinally (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:1395:17)
+    at _SpanImpl.traced (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:4303:12)
+    at callback (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6143:26)",,,0.00,,,
+fca42820-d1c6-4bcf-9ed3-abbb0df9663a,1,,"{""error"":null,""result"":2}","message.includes is not a function
+
+TypeError: message.includes is not a function
+    at isSpam (eval at <anonymous> (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6781:5), <anonymous>:369:19)
+    at Object.task (eval at <anonymous> (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6781:5), <anonymous>:376:14)
+    at rootSpan.traced.name (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6145:46)
+    at /Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:3656:62
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)
+    at withCurrent (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:3656:46)
+    at /Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:4306:18
+    at runCatchFinally (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:1395:17)
+    at _SpanImpl.traced (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:4303:12)
+    at callback (/Users/marykarroqe/Documents/Github/braintrust/node_modules/braintrust/dist/cli.js:6143:26)",,,0.00,,,

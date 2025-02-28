@@ -108,10 +108,18 @@ export async function downloadExperimentsToCsv(projectName: string, destDir: str
 
     for (const experiment of experimentsList.objects) {
         const fetchedExperiment = await fetchExperiment(experiment.id);
+
+        // Check if experiment contains no events
+        if (!fetchedExperiment.events || fetchedExperiment.events.length === 0) {
+            console.warn("Experiment", experiment.name, " contains no events: Skipping.");
+            break;
+        }
+
         const filename = `${destDir}/experiment_${experiment.name}.csv`;
 
         const { rootEventsMap, dynamicHeadersSet } = processEvents(fetchedExperiment.events);
         const csvHeaders = generateCsvHeaders(fetchedExperiment.events, dynamicHeadersSet, excludedFields);
+
         const staticHeaders = csvHeaders.split(',').filter(header => dynamicHeadersSet.has(header) === false);
         const dynamicHeaders = Array.from(dynamicHeadersSet);
         const csvRows = generateCsvRows(fetchedExperiment.events, rootEventsMap, dynamicHeaders, staticHeaders);
@@ -119,7 +127,7 @@ export async function downloadExperimentsToCsv(projectName: string, destDir: str
         const csvContent = `${csvHeaders}\n${csvRows}`;
         fs.writeFileSync(filename, csvContent);
 
-        console.log("Successfully downloaded experiments to " + filename + ".");
+        console.log("Successfully downloaded", experiment.name, "to", filename + ".");
     }
 
     return true;
