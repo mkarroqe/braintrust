@@ -106,12 +106,13 @@ export async function downloadExperimentsToCsv(projectName: string, destDir: str
     // NOTE: assumption
     const excludedFields = ['_xact_id', 'created', 'project_id', 'experiment_id', 'span_id', 'metrics', 'context', 'span_parents', 'root_span_id', 'is_root', 'origin'];
 
+    console.log("Downloading experiments...")
     for (const experiment of experimentsList.objects) {
         const fetchedExperiment = await fetchExperiment(experiment.id);
 
         // Check if experiment contains no events
         if (!fetchedExperiment.events || fetchedExperiment.events.length === 0) {
-            console.warn("Experiment", experiment.name, " contains no events: Skipping.");
+            console.warn("\tSkipped", experiment.name + ": no events found.");
             break;
         }
 
@@ -127,7 +128,7 @@ export async function downloadExperimentsToCsv(projectName: string, destDir: str
         const csvContent = `${csvHeaders}\n${csvRows}`;
         fs.writeFileSync(filename, csvContent);
 
-        console.log("Successfully downloaded", experiment.name, "to", filename + ".");
+        console.log("\tSuccessfully downloaded", experiment.name + ".");
     }
 
     return true;

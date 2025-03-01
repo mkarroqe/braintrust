@@ -29,11 +29,13 @@ The `canned-spam` project was loosely inspired by the [Spam Classifier Cookbook]
   
   - Terminal output:
     ```
-    Successfully downloaded main-1740784163 to local_projects/canned-spam-20250228235621/experiment_main-1740784163.csv.
-    Successfully downloaded main-1740783928 to local_projects/canned-spam-20250228235621/experiment_main-1740783928.csv.
-    Experiment main-1740644077  contains no events: Skipping.
-    Dataset fake and empty  is empty: Skipping.
-    Successfully downloaded ex(spam)ples to local_projects/canned-spam-20250228235621/dataset_ex(spam)ples.csv.
+    Downloading experiments...
+      Successfully downloaded main-1740784163.
+      Successfully downloaded main-1740783928.
+      Skipped main-1740644077: no events found.
+    Downloading datasets...
+      Skipped fake and empty- no entries found.
+      Successfully downloaded ex(spam)ples.
     ```
 
   - [Dataset](https://github.com/mkarroqe/braintrust/blob/main/local_projects/canned-spam-20250227081510/dataset_ex(spam)ples.csv)
